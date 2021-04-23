@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NitipAdmin">
-        <activity android:name=".view.BottomNav"></activity>
+        <activity android:name=".view.DetailConfirmBeforeDoneActivity"></activity>
+        <activity android:name=".view.ConfirmPaymentFromBuyerActivity" />
+        <activity android:name=".view.BottomNav" />
         <activity android:name=".view.SellerDoneDetailActivity" />
         <activity android:name=".view.BuyerPaymentDetailActivity" />
         <activity android:name=".view.AdminPaymentDetailActivity" />
