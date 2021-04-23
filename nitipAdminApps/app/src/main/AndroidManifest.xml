@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NitipAdmin">
-        <activity android:name=".view.LoginActivity"></activity>
+        <activity android:name=".view.BottomNav"></activity>
+        <activity android:name=".view.SellerDoneDetailActivity" />
+        <activity android:name=".view.BuyerPaymentDetailActivity" />
+        <activity android:name=".view.AdminPaymentDetailActivity" />
+        <activity android:name=".view.InputPaymentActivity" />
+        <activity android:name=".view.LoginActivity" />
         <activity android:name=".view.RegisActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
