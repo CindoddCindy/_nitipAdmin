@@ -180,7 +180,7 @@
                                     android:orientation="vertical"
                                     >
                                     <TextView
-                                        android:id="@+id/tv_pay_det_by_jumlah_uang"
+                                        android:id="@+id/tv_pay_det_by_tf_jumlah_uang"
                                         android:padding="5dp"
                                         android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
                                         android:layout_marginBottom="10dp"
@@ -196,7 +196,7 @@
 
                                     </TextView>
                                     <TextView
-                                        android:id="@+id/tv_pay_det_by_nama_bank_kirim"
+                                        android:id="@+id/tv_pay_det_by_tf_nama_bank_kirim"
                                         android:padding="5dp"
                                         android:drawableLeft="@drawable/ic_baseline_other_houses_24"
                                         android:layout_marginBottom="10dp"
@@ -310,7 +310,7 @@
                                     >
 
                                     <TextView
-                                        android:id="@+id/tv_pay_det_sl_nama_terima"
+                                        android:id="@+id/tv_pay_det_ad_nama_terima"
                                         android:padding="5dp"
                                         android:drawableLeft="@drawable/ic_baseline_perm_identity_24"
                                         android:textColor="#151414"
@@ -326,7 +326,7 @@
 
                                     </TextView>
                                     <TextView
-                                        android:id="@+id/tv_pay_det_sl_tgal_terima"
+                                        android:id="@+id/tv_pay_det_ad_tgal_terima"
                                         android:padding="5dp"
                                         android:drawableLeft="@drawable/ic_baseline_date_range_24"
                                         android:layout_marginBottom="10dp"
@@ -392,7 +392,7 @@
                                     android:orientation="vertical"
                                     >
                                     <TextView
-                                        android:id="@+id/tv_pay_det_sl_jumlah_uang_terima"
+                                        android:id="@+id/tv_pay_det_ad_jumlah_uang_terima"
                                         android:padding="5dp"
                                         android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
                                         android:layout_marginBottom="10dp"
@@ -408,7 +408,7 @@
 
                                     </TextView>
                                     <TextView
-                                        android:id="@+id/tv_pay_det_sl_nama_bank_terima"
+                                        android:id="@+id/tv_pay_det_ad_nama_bank_terima"
                                         android:padding="5dp"
                                         android:drawableLeft="@drawable/ic_baseline_other_houses_24"
                                         android:layout_marginBottom="10dp"
