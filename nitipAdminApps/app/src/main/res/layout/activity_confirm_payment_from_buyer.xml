@@ -795,7 +795,7 @@
 
                                             </TextView>
                                             <TextView
-                                                android:id="@+id/tv_pay_det_lugg_tujuan"
+                                                android:id="@+id/tv_conf_in_lugg_tujuan"
                                                 android:layout_weight="1"
                                                 android:shadowColor="#F1F5F6"
                                                 android:shadowRadius="2"
@@ -829,7 +829,7 @@
                                                 android:orientation="vertical"
                                                 android:layout_weight="1">
                                                 <TextView
-                                                    android:id="@+id/tv_pay_det_lugg_tgal_going"
+                                                    android:id="@+id/tv_conf_in_lugg_tgal_going"
                                                     android:layout_marginLeft="5dp"
                                                     android:layout_weight="1"
                                                     android:layout_marginBottom="0dp"
@@ -847,7 +847,7 @@
                                                 </TextView>
 
                                                 <TextView
-                                                    android:id="@+id/tv_pay_det_lugg_time_going"
+                                                    android:id="@+id/tv_conf_in_lugg_time_going"
                                                     android:layout_marginLeft="5dp"
                                                     android:layout_weight="1"
                                                     android:layout_marginBottom="5dp"
@@ -875,7 +875,7 @@
                                                 android:orientation="vertical"
                                                 android:layout_weight="1">
                                                 <TextView
-                                                    android:id="@+id/tv_pay_det_lugg_tgal_arr"
+                                                    android:id="@+id/tv_conf_in_lugg_tgal_arr"
                                                     android:layout_weight="1"
                                                     android:layout_marginBottom="0dp"
                                                     android:textColor="#100F0F"
@@ -892,7 +892,7 @@
                                                 </TextView>
 
                                                 <TextView
-                                                    android:id="@+id/tv_pay_det_lugg_time_arr"
+                                                    android:id="@+id/tv_conf_in_lugg_time_arr"
                                                     android:layout_weight="1"
                                                     android:layout_marginBottom="5dp"
                                                     android:textColor="#100F0F"
@@ -940,7 +940,7 @@
                                                 android:orientation="vertical">
 
                                                 <TextView
-                                                    android:id="@+id/tv_pay_det_lugg_nama_seller"
+                                                    android:id="@+id/tv_conf_in_lugg_nama_seller"
                                                     android:layout_margin="3dp"
                                                     android:drawableLeft="@drawable/ic_baseline_perm_identity_24"
                                                     android:layout_weight="1"
@@ -958,7 +958,7 @@
 
                                                 </TextView>
                                                 <TextView
-                                                    android:id="@+id/tv_pay_det_lugg_price"
+                                                    android:id="@+id/tv_conf_in_lugg_price"
                                                     android:layout_margin="3dp"
                                                     android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
                                                     android:layout_weight="1"
@@ -985,7 +985,7 @@
                                                 android:layout_height="wrap_content"
                                                 android:orientation="vertical">
                                                 <TextView
-                                                    android:id="@+id/tv_pay_det_lugg_height"
+                                                    android:id="@+id/tv_conf_in_lugg_height"
                                                     android:layout_margin="3dp"
                                                     android:drawableLeft="@drawable/ic_baseline_exposure_plus_1_24"
                                                     android:layout_weight="1"
@@ -1004,7 +1004,7 @@
                                                 </TextView>
 
                                                 <TextView
-                                                    android:id="@+id/tv_pay_det_lugg_type"
+                                                    android:id="@+id/tv_conf_in_lugg_type"
                                                     android:layout_margin="3dp"
                                                     android:drawableLeft="@drawable/ic_baseline_home_repair_service_24"
                                                     android:layout_weight="1"
@@ -1037,7 +1037,7 @@
 
 
                                 <TextView
-                                    android:id="@+id/tv_btn_confirm_payment_to_by"
+                                    android:id="@+id/tv_btn_confirm_input_payment_to_by"
                                     android:layout_marginBottom="15dp"
                                     android:layout_marginTop="10dp"
                                     android:layout_marginLeft="10dp"
