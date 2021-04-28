@@ -37,6 +37,7 @@
 
         </TextView>
         <EditText
+            android:id="@+id/et_login_name"
             android:hint="Nama"
             android:drawableLeft="@drawable/ic_baseline_person_24"
             android:drawablePadding="10dp"
@@ -49,6 +50,7 @@
 
         </EditText>
         <EditText
+            android:id="@+id/et_login_password"
             android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
             android:drawablePadding="10dp"
             android:gravity="center"
@@ -61,6 +63,7 @@
 
         </EditText>
         <TextView
+            android:id="@+id/tv_login_btn"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -71,7 +74,7 @@
             android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#068377">
+            android:background="#8BC34A">
 
         </TextView>
 

@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:textSize="10dp"
         android:gravity="center"
-        android:text="Android Aplikasi Untuk Penjual Jasa Titip">
+        android:text="Android Aplikasi Untuk Admin Jasa Titip">
 
     </TextView>
 
