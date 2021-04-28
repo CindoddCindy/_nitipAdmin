@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_bf_don"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="2dp"
@@ -36,6 +37,7 @@
                     >
 
                     <TextView
+                        android:id="@+id/tv_bf_don_rv_nama_pengirim"
                         android:padding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_perm_identity_24"
                         android:textColor="#151414"
@@ -51,6 +53,7 @@
 
                     </TextView>
                     <TextView
+                        android:id="@+id/tv_bf_don_rv_tgal_tf"
                         android:padding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_date_range_24"
                         android:layout_marginBottom="10dp"
@@ -116,6 +119,7 @@
                     android:orientation="vertical"
                     >
                     <TextView
+                        android:id="@+id/tv_bf_don_rv_jumlah_kirim"
                         android:padding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
                         android:layout_marginBottom="10dp"
@@ -131,6 +135,7 @@
 
                     </TextView>
                     <TextView
+                        android:id="@+id/tv_bf_don_rv_nama_bank"
                         android:padding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_other_houses_24"
                         android:layout_marginBottom="10dp"
