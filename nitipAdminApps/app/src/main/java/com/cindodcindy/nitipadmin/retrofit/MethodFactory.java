@@ -1,5 +1,6 @@
 package com.cindodcindy.nitipadmin.retrofit;
 
+import com.cindodcindy.nitipadmin.model.pojo_auth.pojo_login.NitipLoginRespon;
 import com.cindodcindy.nitipadmin.model.pojo_auth.pojo_regis.NitipRegisRespon;
 import com.google.gson.JsonObject;
 
@@ -14,5 +15,11 @@ public interface MethodFactory {
     })
     @POST("auth/registration")
     Call<NitipRegisRespon> adminRegistration(@Body JsonObject body);
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @POST("auth/login")
+    Call<NitipLoginRespon> buyerLogin(@Body JsonObject body);
 
 }
