@@ -9,8 +9,10 @@ import com.cindodcindy.nitipadmin.R;
 
 public class BuyerPaymentDetailActivity extends AppCompatActivity {
 
+    //buyer tf
     private TextView textView_by_nama_pengirim, textView_by_tgal_kirim, textView_by_jumlah_kirim, textView_by_nama_bank;
 
+    //admin get
     private TextView textView_ad_nama_pengirim, textView_ad_tgal_kirim, textView_ad_jumlah_kirim, textView_ad_nama_bank;
 
     //data jasa
