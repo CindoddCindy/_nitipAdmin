@@ -61,10 +61,10 @@ public class ConfirmPaymentFromBuyerActivity extends AppCompatActivity {
         textView_by_nama_bank=findViewById(R.id.tv_conf_in_ad_nama_bank_terima);
 
         //penerima
-        textView_ad_nama_pengirim=findViewById(R.id.tv_pay_det_ad_nama_terima);
-        textView_ad_tgal_kirim=findViewById(R.id.tv_pay_det_ad_tgal_terima);
-        textView_ad_jumlah_kirim=findViewById(R.id.tv_pay_det_ad_jumlah_uang_terima);
-        textView_ad_nama_bank=findViewById(R.id.tv_pay_det_ad_nama_bank_terima);
+        textView_ad_nama_pengirim=findViewById(R.id.tv_conf_in_by_tf_nama_akun);
+        textView_ad_tgal_kirim=findViewById(R.id.tv_conf_in_by_tf_tgal_pay_jasa);
+        textView_ad_jumlah_kirim=findViewById(R.id.tv_conf_in_by_tf_jumlah_uang);
+        textView_ad_nama_bank=findViewById(R.id.tv_conf_in_by_tf_nama_bank_kirim);
 
     }
 }
