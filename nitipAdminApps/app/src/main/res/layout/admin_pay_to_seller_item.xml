@@ -85,25 +85,7 @@
 
                 </TextView>
                 <TextView
-                    android:id="@+id/tv_add_pay_tgal_di_tf"
-                    android:padding="5dp"
-                    android:drawableLeft="@drawable/ic_baseline_date_range_24"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="#151414"
-                    android:textSize="12dp"
-                    android:textStyle="normal"
-                    android:gravity="left"
-                    android:drawablePadding="5dp"
-                    android:text="Tanggal di transfer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-
-                </TextView>
-
-
-                <TextView
-                    android:id="@+id/tv_add_pay_tgal_tf_to_sell"
+                    android:id="@+id/tv_add_pay_jumlah_uang_tf_to_sell"
                     android:padding="5dp"
                     android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
                     android:layout_marginBottom="10dp"
@@ -135,6 +117,26 @@
 
                 </TextView>
 
+
+
+
+
+                <TextView
+                    android:id="@+id/tv_add_pay_tgal_di_tf"
+                    android:padding="5dp"
+                    android:drawableLeft="@drawable/ic_baseline_date_range_24"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#151414"
+                    android:textSize="12dp"
+                    android:textStyle="normal"
+                    android:gravity="left"
+                    android:drawablePadding="5dp"
+                    android:text="Tanggal di transfer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                </TextView>
 
 
 
