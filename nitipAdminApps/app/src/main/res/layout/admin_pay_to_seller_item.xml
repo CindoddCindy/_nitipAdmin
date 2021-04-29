@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_admin_pay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="2dp"
@@ -32,8 +33,8 @@
                     android:layout_gravity="center"
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/profile_image"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:src="@drawable/ic_baseline_done_24"
                     app:civ_border_width="2dp"
                     app:civ_border_color="#009688"/>
@@ -68,6 +69,7 @@
                 >
 
                 <TextView
+                    android:id="@+id/tv_add_pay_nama_penerima"
                     android:padding="5dp"
                     android:drawableLeft="@drawable/ic_baseline_perm_identity_24"
                     android:textColor="#151414"
@@ -83,6 +85,7 @@
 
                 </TextView>
                 <TextView
+                    android:id="@+id/tv_add_pay_tgal_di_tf"
                     android:padding="5dp"
                     android:drawableLeft="@drawable/ic_baseline_date_range_24"
                     android:layout_marginBottom="10dp"
@@ -100,6 +103,7 @@
 
 
                 <TextView
+                    android:id="@+id/tv_add_pay_tgal_tf_to_sell"
                     android:padding="5dp"
                     android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
                     android:layout_marginBottom="10dp"
@@ -115,6 +119,7 @@
 
                 </TextView>
                 <TextView
+                    android:id="@+id/tv_add_pay_nama_bank_seller"
                     android:padding="5dp"
                     android:drawableLeft="@drawable/ic_baseline_other_houses_24"
                     android:layout_marginBottom="10dp"
