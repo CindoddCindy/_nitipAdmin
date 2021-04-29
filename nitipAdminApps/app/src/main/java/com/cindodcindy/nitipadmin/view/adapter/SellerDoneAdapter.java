@@ -36,8 +36,8 @@ public class SellerDoneAdapter extends RecyclerView.Adapter<SellerDoneAdapter.Se
         public SellerDoneChild(@NonNull View itemView) {
             super(itemView);
 
-            textView_nama_penerima=itemView.findViewById(R.id.tv_sell_don_nama_penerima);
-            textView_tgal_diterimma=itemView.findViewById(R.id.tv_sell_don_tgal_diterima);
+            textView_nama_penerima=itemView.findViewById(R.id.tv_sell_don_item_nama_penerima);
+            textView_tgal_diterimma=itemView.findViewById(R.id.tv_sell_don_item_tgal_diterima);
             cardView_seller_done=itemView.findViewById(R.id.cv_done_seller);
         }
     }

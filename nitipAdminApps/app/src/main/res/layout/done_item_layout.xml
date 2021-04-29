@@ -72,7 +72,7 @@
 
 
                 <TextView
-                    android:id="@+id/tv_sell_don_nama_penerima"
+                    android:id="@+id/tv_sell_don_item_nama_penerima"
                     android:padding="5dp"
                     android:drawableLeft="@drawable/ic_baseline_perm_identity_24"
                     android:textColor="#151414"
@@ -88,7 +88,7 @@
 
                 </TextView>
                 <TextView
-                    android:id="@+id/tv_sell_don_tgal_diterima"
+                    android:id="@+id/tv_sell_don_item_tgal_diterima"
                     android:padding="5dp"
                     android:drawableLeft="@drawable/ic_baseline_date_range_24"
                     android:layout_marginBottom="10dp"
