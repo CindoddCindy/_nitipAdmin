@@ -1028,19 +1028,19 @@
 
 
                                 <TextView
-                                    android:id="@+id/tv_conf_det_btn_payment_to_by"
+                                    android:id="@+id/tv_conf_det_btn_hapus_data"
                                     android:layout_marginBottom="15dp"
                                     android:layout_marginTop="10dp"
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="10dp"
                                     android:textSize="15dp"
-                                    android:text="Konfirm Payment Form Buyer"
+                                    android:text="Hapus Data"
                                     android:gravity="center"
                                     android:textColor="#0C0C0C"
                                     android:padding="10dp"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:background="#8BC34A">
+                                    android:background="#A6A8A4">
 
                                 </TextView>
 
