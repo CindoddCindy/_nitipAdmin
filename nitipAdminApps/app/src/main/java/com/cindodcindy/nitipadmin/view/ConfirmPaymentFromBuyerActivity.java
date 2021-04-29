@@ -66,5 +66,7 @@ public class ConfirmPaymentFromBuyerActivity extends AppCompatActivity {
         textView_ad_jumlah_kirim=findViewById(R.id.tv_conf_in_by_tf_jumlah_uang);
         textView_ad_nama_bank=findViewById(R.id.tv_conf_in_by_tf_nama_bank_kirim);
 
+        textView_btn_konfirm_seller_payment_to_buyer=findViewById(R.id.tv_btn_confirm_input_payment_to_by);
+
     }
 }
