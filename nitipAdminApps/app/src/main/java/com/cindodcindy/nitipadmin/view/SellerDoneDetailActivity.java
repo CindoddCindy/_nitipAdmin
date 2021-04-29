@@ -28,6 +28,7 @@ public class SellerDoneDetailActivity extends AppCompatActivity {
     private TextView textView_nama_penerima_barang_ar, textView_tanggal_terima_barang_arr,
     textView_lokasi_terima_barang_arr;
 
+    //btn
     private TextView textView_btn_bayar_seller;
 
     @Override

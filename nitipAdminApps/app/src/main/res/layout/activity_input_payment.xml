@@ -876,7 +876,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
                             <TextView
-                                android:id="@+id/id_add_in_don_lugg_asal"
+                                android:id="@+id/tv_add_in_don_lugg_asal"
                                 android:layout_weight="1"
                                 android:shadowColor="#F1F5F6"
                                 android:shadowRadius="2"
