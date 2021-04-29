@@ -47,12 +47,12 @@ public class ConfirmPaymentFromBuyerActivity extends AppCompatActivity {
 
         //data pembeli
 
-        textView_by_asal=findViewById(R.id.tv_pay_det_by_asal);
-        textView_by_tujuan=findViewById(R.id.tv_pay_det_by_tujuan);
-        textView_by_pengirim=findViewById(R.id.tv_pay_det_det_by_pengirim);
-        textView_by_penerima=findViewById(R.id.tv_pay_det_det_by_penerima);
-        textView_by_jenis_barang=findViewById(R.id.tv_pay_det_by_jenis_barang);
-        textView_by_berat_brg=findViewById(R.id.tv_pay_det_by_berat_barang);
+        textView_by_asal=findViewById(R.id.tv_conf_in_by_asal);
+        textView_by_tujuan=findViewById(R.id.tv_conf_in_by_tujuan);
+        textView_by_pengirim=findViewById(R.id.tv_conf_in_det_by_pengirim);
+        textView_by_penerima=findViewById(R.id.tv_conf_in_det_by_penerima);
+        textView_by_jenis_barang=findViewById(R.id.tv_conf_in_by_jenis_barang);
+        textView_by_berat_brg=findViewById(R.id.tv_conf_in_by_berat_barang);
 
         //pengirim
         textView_by_nama_pengirim=findViewById(R.id.tv_pay_det_by_tf_nama_akun);
