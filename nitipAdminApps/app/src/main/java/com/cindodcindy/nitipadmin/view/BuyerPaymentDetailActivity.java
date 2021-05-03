@@ -2,6 +2,7 @@ package com.cindodcindy.nitipadmin.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -126,6 +127,54 @@ public class BuyerPaymentDetailActivity extends AppCompatActivity {
 
 
         }
+
+    }
+
+
+    public  void sendDataToConfBfBy(){
+
+
+        Bundle bundle = new Bundle();
+       // bundle.putLong("id_buyer", content.getIdBuyer());
+        bundle.putString("asal",textView_asal.getText().toString());
+        bundle.putString("tujuan",textView_tujuan.getText().toString());
+        bundle.putString("tglgo",textView_date_going.getText().toString());
+        bundle.putString("tglarr",textView_date_arive.getText().toString());
+        bundle.putString("jamgo", textView_time_going.getText().toString());
+        bundle.putString("jamarr",textView_time_arrive.getText().toString());
+        bundle.putString("namapenjual",textView_nama_penjual.getText().toString());
+        bundle.putString("kapasitas",textView_kapasitas.getText().toString());
+        bundle.putString("jenisbarang",textView_jenis_barang.getText().toString());
+        bundle.putString("harga", textView_harga.getText().toString());
+
+        bundle.putString("asalBr",textView_by_asal.getText().toString());
+        bundle.putString("tujuanBr",textView_by_tujuan.getText().toString());
+        bundle.putString("pengirim",textView_by_pengirim.getText().toString());
+        bundle.putString("penerima",textView_by_penerima.getText().toString());
+        bundle.putString("jenisBr", textView_by_jenis_barang.getText().toString());
+        bundle.putString("beratBr",textView_by_berat_brg.getText().toString());
+
+        bundle.putString("namaPengirimUang",textView_by_tf_nama_pengirim.getText().toString());
+        bundle.putString("TanggalUangDikirim",textView_by_tf_tgal_kirim.getText().toString());
+        bundle.putString("JumlahUangDikirim",textView_by_tf_jumlah_kirim.getText().toString());
+        bundle.putString("BankPengirim",textView_by_tf_nama_bank.getText().toString());
+
+        bundle.putString("namaPenerimaUang",textView_ad_nama_penerima.getText().toString());
+        bundle.putString("noRekPenerima",textView_ad_no_rek.getText().toString());
+        bundle.putString("bankPenerima",textView_ad_nama_bank.getText().toString());
+        bundle.putString("jumlahUang",textView_ad_jumlah_kirim.getText().toString());
+
+        bundle.putString("waktuBayar",textView_ad_waktu_kirim.getText().toString());
+        bundle.putString("phonePenerima",textView_phone_penerima.getText().toString());
+        bundle.putString("PhonePengirim",textView_phone_pengirim.getText().toString());
+
+
+
+
+        Intent intent = new Intent(BuyerPaymentDetailActivity.this, ConfirmPaymentFromBuyerActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+
 
     }
 }
