@@ -71,4 +71,8 @@ public class BuyerPaymentDetailActivity extends AppCompatActivity {
 
 
     }
+
+    public void getDataDetailBuyer(){
+
+    }
 }
