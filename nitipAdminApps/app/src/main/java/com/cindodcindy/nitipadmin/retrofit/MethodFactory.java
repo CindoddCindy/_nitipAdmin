@@ -3,6 +3,7 @@ package com.cindodcindy.nitipadmin.retrofit;
 import com.cindodcindy.nitipadmin.model.pojo_auth.pojo_login.NitipLoginRespon;
 import com.cindodcindy.nitipadmin.model.pojo_auth.pojo_regis.NitipRegisRespon;
 import com.cindodcindy.nitipadmin.model.pojo_buyer_payment.pojo_get_payment.NitipGetPaymentRespon;
+import com.cindodcindy.nitipadmin.model.pojo_buyer_payment.pojo_post_payment.NitipPostPaymentRespon;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -30,7 +31,27 @@ public interface MethodFactory {
             "Content-Type:application/json"
     })
     @GET("payment/users/{userId}/payments")
-    Call<NitipGetPaymentRespon> AdminGetPaymentList(@Path("userId") Long user_id);
+    Call<NitipGetPaymentRespon> AdminGetPaymentListFromBuyer(@Path("userId") Long user_id);
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @GET("payment/users/{userId}/payments")
+    Call<NitipGetPaymentRespon> AdminGetPaymentListFromOwn(@Path("userId") Long user_id);
+
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @POST("payment/users/{userId}/payments")
+    Call<NitipPostPaymentRespon> sendPaymentToSeller(@Path("userId") Long user_id, @Body JsonObject body);
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @POST("payment/users/{userId}/payments")
+    Call<NitipPostPaymentRespon> sendPaymentToOwnAdmin(@Path("userId") Long user_id, @Body JsonObject body);
+
 
 
 }
