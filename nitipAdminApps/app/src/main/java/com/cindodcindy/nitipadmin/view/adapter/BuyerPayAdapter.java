@@ -80,6 +80,11 @@ public class BuyerPayAdapter extends RecyclerView.Adapter<BuyerPayAdapter.BuyerP
                 bundle.putString("bankPenerima",content.getUangSejumlah());
                 bundle.putString("jumlahUang",content.getBankPengirimUang());
 
+                bundle.putString("waktuBayar",content.getTanggalTransfer());
+                bundle.putString("phonePenerima",content.getUangSejumlah());
+                bundle.putString("PhonePengirim",content.getBankPengirimUang());
+
+
 
 
                 Intent intent = new Intent(context, BuyerPaymentDetailActivity.class);

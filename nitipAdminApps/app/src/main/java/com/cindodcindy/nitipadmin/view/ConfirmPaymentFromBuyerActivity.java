@@ -9,11 +9,11 @@ import com.cindodcindy.nitipadmin.R;
 
 public class ConfirmPaymentFromBuyerActivity extends AppCompatActivity {
 
-    //buyer tf
-    private TextView textView_by_nama_pengirim, textView_by_tgal_kirim, textView_by_jumlah_kirim, textView_by_nama_bank;
+    //buyer data dari buyer
+    private TextView textView_by_akun_bank_nama, textView_by_tgal_kirim_tf, textView_by_jumlah_kirim, textView_by_nama_bank;
 
     //admin get
-    private TextView textView_ad_nama_pengirim, textView_ad_tgal_kirim, textView_ad_jumlah_kirim, textView_ad_nama_bank;
+    private TextView textView_ad_nama_pengirim, textView_ad_no_rek, textView_ad_bank_name, textView_ad_jumlah_kirim, textView_ad_wktu_tf;
 
     //data jasa
     private TextView textView_asal, textView_tujuan, textView_date_going, textView_date_arive,
@@ -55,16 +55,17 @@ public class ConfirmPaymentFromBuyerActivity extends AppCompatActivity {
         textView_by_berat_brg=findViewById(R.id.tv_conf_in_by_berat_barang);
 
         //pengirim
-        textView_by_nama_pengirim=findViewById(R.id.tv_conf_in_ad_nama_terima);
-        textView_by_tgal_kirim=findViewById(R.id.tv_conf_in_ad_tgal_terima);
-        textView_by_jumlah_kirim=findViewById(R.id.tv_conf_in_ad_jumlah_uang_terima);
-        textView_by_nama_bank=findViewById(R.id.tv_conf_in_ad_nama_bank_terima);
+        textView_by_akun_bank_nama=findViewById(R.id.tv_ad_in_by_tf_nama_akun);
+        textView_by_tgal_kirim_tf=findViewById(R.id.tv_conf_in_by_tf_tgal_pay_jasa);
+        textView_by_jumlah_kirim=findViewById(R.id.tv_conf_in_by_tf_jumlah_uang);
+        textView_by_nama_bank=findViewById(R.id.tv_conf_in_by_tf_nama_bank_kirim);
 
         //penerima
-        textView_ad_nama_pengirim=findViewById(R.id.tv_conf_in_by_tf_nama_akun);
-        textView_ad_tgal_kirim=findViewById(R.id.tv_conf_in_by_tf_tgal_pay_jasa);
-        textView_ad_jumlah_kirim=findViewById(R.id.tv_conf_in_by_tf_jumlah_uang);
-        textView_ad_nama_bank=findViewById(R.id.tv_conf_in_by_tf_nama_bank_kirim);
+        textView_ad_nama_pengirim=findViewById(R.id.tv_conf_in_ad_nama_terima);
+        textView_ad_no_rek=findViewById(R.id.tv_conf_in_ad_no_rek_penerima);
+        textView_ad_jumlah_kirim=findViewById(R.id.tv_conf_in_ad_jumlah_uang_terima);
+        textView_ad_bank_name=findViewById(R.id.tv_conf_in_ad_nama_bank_terima);
+        textView_ad_wktu_tf=findViewById(R.id.tv_conf_in_ad_wktu_tf);
 
         textView_btn_konfirm_seller_payment_to_buyer=findViewById(R.id.tv_btn_confirm_input_payment_to_by);
 
