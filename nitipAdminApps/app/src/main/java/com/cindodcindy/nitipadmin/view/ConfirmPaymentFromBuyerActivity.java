@@ -311,10 +311,6 @@ public class ConfirmPaymentFromBuyerActivity extends AppCompatActivity {
         jsonObject.addProperty("jenisBarang", jenisBarangsl);
         jsonObject.addProperty("hargaBagasi", hargaSl);
 
-
-
-
-
         MethodFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodFactory.class);
         Call<NitipPostPaymentRespon> postPaymentResponCall= methodsFactory.sendPaymentToOwnAdmin(idBuyer,jsonObject);
         postPaymentResponCall.enqueue(new Callback<NitipPostPaymentRespon>() {
