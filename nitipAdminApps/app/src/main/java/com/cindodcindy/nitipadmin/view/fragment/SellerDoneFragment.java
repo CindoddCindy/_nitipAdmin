@@ -3,12 +3,28 @@ package com.cindodcindy.nitipadmin.view.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.cindodcindy.nitipadmin.R;
+import com.cindodcindy.nitipadmin.model.pojo_done.pojo_get_done.Content;
+import com.cindodcindy.nitipadmin.model.pojo_done.pojo_get_done.NitipGetDoneRespon;
+import com.cindodcindy.nitipadmin.retrofit.MethodFactory;
+import com.cindodcindy.nitipadmin.retrofit.RetrofitHandle;
+import com.cindodcindy.nitipadmin.shared_pref.SpHandle;
+import com.cindodcindy.nitipadmin.view.adapter.SellerDoneAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +37,13 @@ public class SellerDoneFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private RecyclerView recyclerView;
+    private SellerDoneAdapter sellerDoneAdapter;
+    private List<Content> contentList = new ArrayList<>();
+    private MethodFactory methodFactory;
+    private SpHandle spHandle;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -61,6 +84,63 @@ public class SellerDoneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_seller_done, container, false);
+        View view = inflater.inflate(R.layout.fragment_seller_done, container, false);
+
+        spHandle = new SpHandle(getContext());
+
+        recyclerView = view.findViewById(R.id.rv_sell_done);
+        sellerDoneAdapter = new SellerDoneAdapter( contentList, getContext());
+        recyclerView.setAdapter(sellerDoneAdapter);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        sellerGetPayment();
+
+        return view;
+    }
+
+    public void sellerGetPayment(){
+
+        Long id = spHandle.getIdSeller();
+
+        methodFactory = RetrofitHandle.getRetrofitLink().create(MethodFactory.class);
+        Call<NitipGetDoneRespon> doneResponCall= methodFactory.getDoneFromSeller(id);
+        doneResponCall.enqueue(new Callback<NitipGetDoneRespon>() {
+            @Override
+            public void onResponse(Call<NitipGetDoneRespon> call, Response<NitipGetDoneRespon> response) {
+
+                if (response.isSuccessful()) {
+                    List<Content> content = response.body().getContent();
+                    sellerDoneAdapter = new SellerDoneAdapter(content, getContext());
+                    recyclerView.setAdapter(sellerDoneAdapter);
+                    sellerDoneAdapter.notifyDataSetChanged();
+                }
+                else {
+                    // error case
+                    switch (response.code()) {
+                        case 404:
+                            Toast.makeText(getContext(), "404 not found", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(getContext(), "500 internal server error", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 401:
+                            Toast.makeText(getContext(), "401 unauthorized", Toast.LENGTH_SHORT).show();
+                            break;
+
+                        default:
+                            Toast.makeText(getContext(), "unknown error", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<NitipGetDoneRespon> call, Throwable t) {
+                Toast.makeText(getContext(), "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
     }
 }
