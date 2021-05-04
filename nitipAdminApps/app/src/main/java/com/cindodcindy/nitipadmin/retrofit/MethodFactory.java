@@ -52,6 +52,19 @@ public interface MethodFactory {
     @POST("payment/users/{userId}/payments")
     Call<NitipPostPaymentRespon> sendPaymentToOwnAdmin(@Path("userId") Long user_id, @Body JsonObject body);
 
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @POST("money/users/{userId}/moneys")
+    Call<NitipPostPaymentRespon> sendMoneyToOwnAdmin(@Path("userId") Long user_id, @Body JsonObject body);
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @POST("money/users/{userId}/moneys")
+    Call<NitipPostPaymentRespon> sendMoneyToSeller(@Path("userId") Long user_id, @Body JsonObject body);
+
+
 
 
 }

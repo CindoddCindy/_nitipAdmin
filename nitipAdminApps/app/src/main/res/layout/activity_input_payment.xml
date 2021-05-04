@@ -1194,73 +1194,6 @@
                     android:textStyle="bold"
                     android:gravity="left"
                     android:drawablePadding="5dp"
-                    android:text="Ditransfer Oleh"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-
-                </TextView>
-
-                <EditText
-                    android:id="@+id/et_add_in_tf_to_sell_nama_pengirim"
-                    android:padding="3dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="5dp"
-                    android:textSize="12dp"
-                    android:textStyle="normal"
-                    android:gravity="left"
-                    android:drawablePadding="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-
-                </EditText>
-                <TextView
-                    android:shadowColor="#F1F5F6"
-                    android:shadowRadius="2"
-                    android:shadowDx="1"
-                    android:shadowDy="1"
-                    android:padding="3dp"
-                    android:textColor="#040303"
-                    android:layout_marginTop="5dp"
-                    android:textSize="12dp"
-                    android:textStyle="bold"
-                    android:gravity="left"
-                    android:drawablePadding="5dp"
-                    android:text="Uang Sejumlah"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-
-                </TextView>
-
-                <EditText
-                    android:id="@+id/et_add_in_tf_to_sell_jumlah_uang"
-                    android:padding="3dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="5dp"
-                    android:textSize="12dp"
-                    android:textStyle="normal"
-                    android:gravity="left"
-                    android:drawablePadding="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-
-                </EditText>
-
-                <TextView
-                    android:shadowColor="#F1F5F6"
-                    android:shadowRadius="2"
-                    android:shadowDx="1"
-                    android:shadowDy="1"
-                    android:padding="3dp"
-                    android:textColor="#040303"
-                    android:layout_marginTop="5dp"
-                    android:textSize="12dp"
-                    android:textStyle="bold"
-                    android:gravity="left"
-                    android:drawablePadding="5dp"
                     android:text="Bank Asal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1269,7 +1202,40 @@
                 </TextView>
 
                 <EditText
-                    android:id="@+id/et_add_in_tf_to_sell_bank_asal"
+                    android:id="@+id/et_add_in_tf_bank_asal"
+                    android:padding="3dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+                    android:textStyle="normal"
+                    android:gravity="left"
+                    android:drawablePadding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                </EditText>
+                <TextView
+                    android:shadowColor="#F1F5F6"
+                    android:shadowRadius="2"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:padding="3dp"
+                    android:textColor="#040303"
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:gravity="left"
+                    android:drawablePadding="5dp"
+                    android:text="Bank Tujuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/et_add_in_tf_bank_tujuan"
                     android:padding="3dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="5dp"
@@ -1295,7 +1261,7 @@
                     android:textStyle="bold"
                     android:gravity="left"
                     android:drawablePadding="5dp"
-                    android:text="Tanggal Uang Ditransfer"
+                    android:text="Nama Penerima"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     >
@@ -1303,7 +1269,7 @@
                 </TextView>
 
                 <EditText
-                    android:id="@+id/et_add_in_tf_to_sell_tgal_kirim"
+                    android:id="@+id/et_add_in_tf_nama_penerima"
                     android:padding="3dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="5dp"
@@ -1316,6 +1282,112 @@
                     >
 
                 </EditText>
+
+                <TextView
+                    android:shadowColor="#F1F5F6"
+                    android:shadowRadius="2"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:padding="3dp"
+                    android:textColor="#040303"
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:gravity="left"
+                    android:drawablePadding="5dp"
+                    android:text="Nama Pengirim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/et_add_in_tf_nama_pengirin"
+                    android:padding="3dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+                    android:textStyle="normal"
+                    android:gravity="left"
+                    android:drawablePadding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                </EditText>
+
+
+                <TextView
+                    android:shadowColor="#F1F5F6"
+                    android:shadowRadius="2"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:padding="3dp"
+                    android:textColor="#040303"
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:gravity="left"
+                    android:drawablePadding="5dp"
+                    android:text="Jumlah Uang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/et_add_in_tf_jumlah_uang"
+                    android:padding="3dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+                    android:textStyle="normal"
+                    android:gravity="left"
+                    android:drawablePadding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                </EditText>
+
+                <TextView
+                    android:shadowColor="#F1F5F6"
+                    android:shadowRadius="2"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:padding="3dp"
+                    android:textColor="#040303"
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:gravity="left"
+                    android:drawablePadding="5dp"
+                    android:text="Tanggal Kirim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/et_add_in_tf_tanggal_kirim"
+                    android:padding="3dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="12dp"
+                    android:textStyle="normal"
+                    android:gravity="left"
+                    android:drawablePadding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                </EditText>
+
+
+
 
                 <TextView
                     android:id="@+id/tv_add_in_btn_tv_payment_to_seller"
