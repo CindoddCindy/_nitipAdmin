@@ -23,7 +23,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/rv_send_payment"
+            android:id="@+id/rv_money_to_seller"
             android:layout_margin="10dp">
 
         </androidx.recyclerview.widget.RecyclerView>

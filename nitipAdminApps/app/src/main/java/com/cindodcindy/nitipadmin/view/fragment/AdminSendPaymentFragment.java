@@ -87,7 +87,7 @@ public class AdminSendPaymentFragment extends Fragment {
          View view = inflater.inflate(R.layout.fragment_admin_send_payment, container, false);
         spHandle = new SpHandle(getContext());
 
-        recyclerView = view.findViewById(R.id.rv_send_payment);
+        recyclerView = view.findViewById(R.id.rv_money_to_seller);
         adminPaymentAdapter = new AdminPaymentAdapter( contentList, getContext());
         recyclerView.setAdapter(adminPaymentAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
