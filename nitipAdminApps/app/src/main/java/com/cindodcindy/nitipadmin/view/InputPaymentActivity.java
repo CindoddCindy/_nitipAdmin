@@ -5,8 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cindodcindy.nitipadmin.R;
+import com.cindodcindy.nitipadmin.model.pojo_buyer_payment.pojo_post_payment.NitipPostPaymentRespon;
+import com.cindodcindy.nitipadmin.model.pojo_money.pojo_post_money.NitipPostMoneyRespon;
+import com.cindodcindy.nitipadmin.retrofit.MethodFactory;
+import com.cindodcindy.nitipadmin.retrofit.RetrofitHandle;
+import com.cindodcindy.nitipadmin.shared_pref.SpHandle;
+import com.google.gson.JsonObject;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class InputPaymentActivity extends AppCompatActivity {
 
@@ -32,6 +43,7 @@ public class InputPaymentActivity extends AppCompatActivity {
     private EditText editText_bank_asal, editText_bank_tujuan, editText_akun_penerima, editText_akun_pengirim,
     editText_jumlah_uang_kirim, editText_tanggal_kirim_uang;
 
+    private SpHandle spHandle;
 
     //btn
     private TextView textView_btn_bayar_seller;
@@ -40,6 +52,8 @@ public class InputPaymentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_payment);
+
+        spHandle=new SpHandle(InputPaymentActivity.this);
 
         //data jasa
 
@@ -149,9 +163,259 @@ public class InputPaymentActivity extends AppCompatActivity {
 
     public  void kirimKeAdmin(){
 
+        String anBrgArr=textView_nama_penerima_barang_arr.getText().toString();
+        String tglBrgArr=textView_tanggal_terima_barang_arr.getText().toString();
+        String locBrgArr=textView_lokasi_terima_barang_arr.getText().toString();
+
+        String anPengirim=editText_akun_pengirim.getText().toString();
+        String anPenerima=editText_akun_penerima.getText().toString();
+        String bankAsal=editText_bank_asal.getText().toString();
+        String bankTujuan=editText_bank_tujuan.getText().toString();
+        String jumlahTf=editText_jumlah_uang_kirim.getText().toString();
+        String tgalTf=editText_tanggal_kirim_uang.getText().toString();
+
+
+
+        Long idSeller=spHandle.getIdSeller();
+        Long idBuyer=spHandle.getIdBuyer();
+
+        //data buyer
+
+        String asalBy = textView_by_asal.getText().toString();
+        String tujuanBy = textView_by_tujuan.getText().toString();
+        String pengirimBy = textView_by_pengirim.getText().toString();
+        String penerimaBy = textView_by_penerima.getText().toString();
+        String jenisBarangby = textView_by_jenis_barang.getText().toString();
+        String beratbarangby = textView_by_berat_brg.getText().toString();
+
+
+        //data jasa
+        String asalSl = textView_asal.getText().toString();
+        String tujuanSl  = textView_tujuan.getText().toString();
+        String tgalGoSl =  textView_date_going.getText().toString();
+        String tgalArrSl =  textView_date_arive.getText().toString();
+        String timeGoSl =  textView_time_going.getText().toString();
+        String timeArrSl = textView_time_arrive.getText().toString();
+        String namaPenjualSl  =  textView_nama_penjual.getText().toString();
+        String hargaSl  =  textView_harga.getText().toString();
+        String jenisBarangsl  = textView_jenis_barang.getText().toString();
+        String kapasitasSl =  textView_kapasitas.getText().toString();
+
+
+
+
+
+
+        JsonObject jsonObject = new JsonObject();
+
+        jsonObject.addProperty("anBrgArr",anBrgArr );
+        jsonObject.addProperty("tglBrgArr", tglBrgArr);
+        jsonObject.addProperty("locBrgArr",locBrgArr );
+        jsonObject.addProperty("tanggalTransfer",tgalTf );
+        jsonObject.addProperty("dariBank",bankAsal );
+        jsonObject.addProperty("keBank",bankTujuan );
+        jsonObject.addProperty("anPenerima", anPenerima);
+        jsonObject.addProperty("anPengirim",anPengirim );
+        jsonObject.addProperty("jumlahUang", jumlahTf);
+
+        jsonObject.addProperty("idBuyer", idBuyer);
+        jsonObject.addProperty("idSeller",idSeller);
+
+
+
+
+        jsonObject.addProperty("namaPembeli",pengirimBy );
+        jsonObject.addProperty("alamatPembeli",asalBy);
+        jsonObject.addProperty("alamatPenerima",tujuanBy );
+        jsonObject.addProperty("namaPenerima",penerimaBy );
+        jsonObject.addProperty("jenisBarangKirim",jenisBarangby );
+        jsonObject.addProperty("kapasitasBarang",beratbarangby );
+
+        jsonObject.addProperty("namaPenjual",namaPenjualSl );
+        jsonObject.addProperty("asal",asalSl );
+        jsonObject.addProperty("tujuan",tujuanSl );
+        jsonObject.addProperty("tanggalBerangkat",tgalGoSl );
+        jsonObject.addProperty("jamBerangkat",timeGoSl );
+        jsonObject.addProperty("tanggalTiba",tgalArrSl);
+        jsonObject.addProperty("jamTiba", timeArrSl);
+        jsonObject.addProperty("kapasitas",kapasitasSl);
+        jsonObject.addProperty("jenisBarang", jenisBarangsl);
+        jsonObject.addProperty("hargaBagasi", hargaSl);
+
+
+
+
+
+        MethodFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodFactory.class);
+        Call<NitipPostMoneyRespon> moneyResponCall= methodsFactory.sendMoneyToOwnAdmin(idBuyer,jsonObject);
+        moneyResponCall.enqueue(new Callback<NitipPostMoneyRespon>() {
+            @Override
+            public void onResponse(Call<NitipPostMoneyRespon> call, Response<NitipPostMoneyRespon> response) {
+                if(response.isSuccessful()){
+
+
+
+                }
+
+                else {
+                    // error case
+                    switch (response.code()) {
+                        case 404:
+                            Toast.makeText(InputPaymentActivity.this, " not found", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(InputPaymentActivity.this, "server error", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 401:
+                            Toast.makeText(InputPaymentActivity.this, " sorry can't authenticated, try again", Toast.LENGTH_SHORT).show();
+                            break;
+
+                        default:
+                            Toast.makeText(InputPaymentActivity.this, "unknown error ", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<NitipPostMoneyRespon> call, Throwable t) {
+                Toast.makeText(InputPaymentActivity.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+
     }
 
     public  void kirimKeSeller(){
+
+        String anBrgArr=textView_nama_penerima_barang_arr.getText().toString();
+        String tglBrgArr=textView_tanggal_terima_barang_arr.getText().toString();
+        String locBrgArr=textView_lokasi_terima_barang_arr.getText().toString();
+
+        String anPengirim=editText_akun_pengirim.getText().toString();
+        String anPenerima=editText_akun_penerima.getText().toString();
+        String bankAsal=editText_bank_asal.getText().toString();
+        String bankTujuan=editText_bank_tujuan.getText().toString();
+        String jumlahTf=editText_jumlah_uang_kirim.getText().toString();
+        String tgalTf=editText_tanggal_kirim_uang.getText().toString();
+
+
+
+        Long idSeller=spHandle.getIdSeller();
+        Long idBuyer=spHandle.getIdBuyer();
+
+        //data buyer
+
+        String asalBy = textView_by_asal.getText().toString();
+        String tujuanBy = textView_by_tujuan.getText().toString();
+        String pengirimBy = textView_by_pengirim.getText().toString();
+        String penerimaBy = textView_by_penerima.getText().toString();
+        String jenisBarangby = textView_by_jenis_barang.getText().toString();
+        String beratbarangby = textView_by_berat_brg.getText().toString();
+
+
+        //data jasa
+        String asalSl = textView_asal.getText().toString();
+        String tujuanSl  = textView_tujuan.getText().toString();
+        String tgalGoSl =  textView_date_going.getText().toString();
+        String tgalArrSl =  textView_date_arive.getText().toString();
+        String timeGoSl =  textView_time_going.getText().toString();
+        String timeArrSl = textView_time_arrive.getText().toString();
+        String namaPenjualSl  =  textView_nama_penjual.getText().toString();
+        String hargaSl  =  textView_harga.getText().toString();
+        String jenisBarangsl  = textView_jenis_barang.getText().toString();
+        String kapasitasSl =  textView_kapasitas.getText().toString();
+
+
+
+
+
+
+        JsonObject jsonObject = new JsonObject();
+
+        jsonObject.addProperty("anBrgArr",anBrgArr );
+        jsonObject.addProperty("tglBrgArr", tglBrgArr);
+        jsonObject.addProperty("locBrgArr",locBrgArr );
+        jsonObject.addProperty("tanggalTransfer",tgalTf );
+        jsonObject.addProperty("dariBank",bankAsal );
+        jsonObject.addProperty("keBank",bankTujuan );
+        jsonObject.addProperty("anPenerima", anPenerima);
+        jsonObject.addProperty("anPengirim",anPengirim );
+        jsonObject.addProperty("jumlahUang", jumlahTf);
+
+        jsonObject.addProperty("idBuyer", idBuyer);
+        jsonObject.addProperty("idSeller",idSeller);
+
+
+
+
+        jsonObject.addProperty("namaPembeli",pengirimBy );
+        jsonObject.addProperty("alamatPembeli",asalBy);
+        jsonObject.addProperty("alamatPenerima",tujuanBy );
+        jsonObject.addProperty("namaPenerima",penerimaBy );
+        jsonObject.addProperty("jenisBarangKirim",jenisBarangby );
+        jsonObject.addProperty("kapasitasBarang",beratbarangby );
+
+        jsonObject.addProperty("namaPenjual",namaPenjualSl );
+        jsonObject.addProperty("asal",asalSl );
+        jsonObject.addProperty("tujuan",tujuanSl );
+        jsonObject.addProperty("tanggalBerangkat",tgalGoSl );
+        jsonObject.addProperty("jamBerangkat",timeGoSl );
+        jsonObject.addProperty("tanggalTiba",tgalArrSl);
+        jsonObject.addProperty("jamTiba", timeArrSl);
+        jsonObject.addProperty("kapasitas",kapasitasSl);
+        jsonObject.addProperty("jenisBarang", jenisBarangsl);
+        jsonObject.addProperty("hargaBagasi", hargaSl);
+
+
+
+
+
+        MethodFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodFactory.class);
+        Call<NitipPostMoneyRespon> moneyResponCall= methodsFactory.sendMoneyToOwnAdmin(idBuyer,jsonObject);
+        moneyResponCall.enqueue(new Callback<NitipPostMoneyRespon>() {
+            @Override
+            public void onResponse(Call<NitipPostMoneyRespon> call, Response<NitipPostMoneyRespon> response) {
+                if(response.isSuccessful()){
+
+
+
+                }
+
+                else {
+                    // error case
+                    switch (response.code()) {
+                        case 404:
+                            Toast.makeText(InputPaymentActivity.this, " not found", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(InputPaymentActivity.this, "server error", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 401:
+                            Toast.makeText(InputPaymentActivity.this, " sorry can't authenticated, try again", Toast.LENGTH_SHORT).show();
+                            break;
+
+                        default:
+                            Toast.makeText(InputPaymentActivity.this, "unknown error ", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<NitipPostMoneyRespon> call, Throwable t) {
+                Toast.makeText(InputPaymentActivity.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
 
     }
 }

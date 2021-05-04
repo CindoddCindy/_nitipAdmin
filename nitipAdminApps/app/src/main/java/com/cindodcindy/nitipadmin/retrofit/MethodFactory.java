@@ -4,6 +4,7 @@ import com.cindodcindy.nitipadmin.model.pojo_auth.pojo_login.NitipLoginRespon;
 import com.cindodcindy.nitipadmin.model.pojo_auth.pojo_regis.NitipRegisRespon;
 import com.cindodcindy.nitipadmin.model.pojo_buyer_payment.pojo_get_payment.NitipGetPaymentRespon;
 import com.cindodcindy.nitipadmin.model.pojo_buyer_payment.pojo_post_payment.NitipPostPaymentRespon;
+import com.cindodcindy.nitipadmin.model.pojo_money.pojo_post_money.NitipPostMoneyRespon;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -56,13 +57,13 @@ public interface MethodFactory {
             "Content-Type:application/json"
     })
     @POST("money/users/{userId}/moneys")
-    Call<NitipPostPaymentRespon> sendMoneyToOwnAdmin(@Path("userId") Long user_id, @Body JsonObject body);
+    Call<NitipPostMoneyRespon> sendMoneyToOwnAdmin(@Path("userId") Long user_id, @Body JsonObject body);
 
     @Headers({
             "Content-Type:application/json"
     })
     @POST("money/users/{userId}/moneys")
-    Call<NitipPostPaymentRespon> sendMoneyToSeller(@Path("userId") Long user_id, @Body JsonObject body);
+    Call<NitipPostMoneyRespon> sendMoneyToSeller(@Path("userId") Long user_id, @Body JsonObject body);
 
 
 
