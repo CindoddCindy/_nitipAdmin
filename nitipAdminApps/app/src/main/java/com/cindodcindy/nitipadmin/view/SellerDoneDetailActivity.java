@@ -2,6 +2,7 @@ package com.cindodcindy.nitipadmin.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -13,7 +14,7 @@ public class SellerDoneDetailActivity extends AppCompatActivity {
     private TextView textView_by_nama_pengirim, textView_by_tgal_kirim, textView_by_jumlah_kirim, textView_by_nama_bank;
 
     //admin get
-    private TextView textView_ad_nama_pengirim, textView_ad_tgal_kirim, textView_ad_jumlah_kirim, textView_ad_nama_bank;
+    private TextView textView_ad_nama_pengirim, textView_ad_no_rek_seller, textView_ad_jumlah_kirim, textView_ad_nama_bank;
 
     //data jasa
     private TextView textView_asal, textView_tujuan, textView_date_going, textView_date_arive,
@@ -25,7 +26,7 @@ public class SellerDoneDetailActivity extends AppCompatActivity {
     private TextView textView_by_asal, textView_by_tujuan, textView_by_pengirim, textView_by_penerima, textView_by_jenis_barang, textView_by_berat_brg;
 
     //data barang di terima
-    private TextView textView_nama_penerima_barang_ar, textView_tanggal_terima_barang_arr,
+    private TextView textView_nama_penerima_barang_arr, textView_tanggal_terima_barang_arr,
     textView_lokasi_terima_barang_arr;
 
     //btn
@@ -66,9 +67,13 @@ public class SellerDoneDetailActivity extends AppCompatActivity {
 
         //penerima
         textView_ad_nama_pengirim=findViewById(R.id.tv_sell_don_ad_nama_terima);
-        textView_ad_tgal_kirim=findViewById(R.id.tv_sell_don_ad_tgal_terima);
+        textView_ad_no_rek_seller=findViewById(R.id.tv_sell_don_ad_no_rek);
         textView_ad_jumlah_kirim=findViewById(R.id.tv_sell_don_ad_jumlah_uang_terima);
         textView_ad_nama_bank=findViewById(R.id.tv_sell_don_ad_nama_bank_terima);
+
+        textView_nama_penerima_barang_arr=findViewById(R.id.tv_sell_don_nama_penerima_brg);
+        textView_tanggal_terima_barang_arr=findViewById(R.id.tv_sell_don_tagl_diterima_brg);
+        textView_lokasi_terima_barang_arr=findViewById(R.id.tv_sell_don_lokasi_diterima_brg);
 
         textView_btn_bayar_seller=findViewById(R.id.tv_sell_don_btn_bayar_seller);
 
@@ -102,13 +107,71 @@ public class SellerDoneDetailActivity extends AppCompatActivity {
             textView_by_jenis_barang.setText(bundle.getString("jenisBr"));
             textView_by_berat_brg.setText(bundle.getString("beratBr"));
 
-            textView_diterima_oleh.setText(bundle.getString("namaPenerimaBarang"));
-            textView_tgal_diterima.setText(bundle.getString("tanggalBarangTiba"));
-            textView_lokasi_get_brg.setText(bundle.getString("lokasiBarangDiterima"));
+            textView_nama_penerima_barang_arr.setText(bundle.getString("namaPenerimaBarang"));
+            textView_tanggal_terima_barang_arr.setText(bundle.getString("tanggalBarangTiba"));
+            textView_lokasi_terima_barang_arr.setText(bundle.getString("lokasiBarangDiterima"));
+
+
+            //pengirim
+            textView_by_nama_pengirim.setText(bundle.getString("akunBayar"));
+            textView_by_tgal_kirim.setText(bundle.getString("tanggalBayar"));
+            textView_by_jumlah_kirim.setText(bundle.getString("hargaBayar"));
+            textView_by_nama_bank.setText(bundle.getString("bankBayar"));
+
+            //penerima
+            textView_ad_nama_pengirim.setText(bundle.getString("akunTerima"));
+            textView_ad_no_rek_seller.setText(bundle.getString("noRekTerima"));
+            textView_ad_jumlah_kirim.setText(bundle.getString("jumlahTerima"));
+            textView_ad_nama_bank.setText(bundle.getString("bankTerima"));
+
+
 
 
 
 
         }
+    }
+
+    public void sendToAdminInputPay(){
+
+        Bundle bundle = new Bundle();
+      //  bundle.putLong("id_seller", textView_asal.getText().toString());
+        bundle.putString("asal",textView_asal.getText().toString());
+        bundle.putString("tujuan",textView_tujuan.getText().toString());
+        bundle.putString("tglgo",textView_date_going.getText().toString());
+        bundle.putString("tglarr",textView_date_arive.getText().toString());
+        bundle.putString("jamgo", textView_time_going.getText().toString());
+        bundle.putString("jamarr",textView_time_arrive.getText().toString());
+        bundle.putString("namapenjual",textView_nama_penjual.getText().toString());
+        bundle.putString("kapasitas",textView_kapasitas.getText().toString());
+        bundle.putString("jenisbarang",textView_jenis_barang.getText().toString());
+        bundle.putString("harga",textView_harga.getText().toString() );
+
+        bundle.putString("asalBr",textView_by_asal.getText().toString());
+        bundle.putString("tujuanBr",textView_by_tujuan.getText().toString());
+        bundle.putString("pengirim",textView_by_pengirim.getText().toString());
+        bundle.putString("penerima",textView_by_penerima.getText().toString());
+        bundle.putString("jenisBr", textView_by_jenis_barang.getText().toString());
+        bundle.putString("beratBr",textView_by_berat_brg.getText().toString());
+
+
+        bundle.putString("akunBayar",textView_by_nama_pengirim.getText().toString());
+        bundle.putString("tanggalBayar",textView_by_tgal_kirim.getText().toString());
+        bundle.putString("bankBayar",textView_by_nama_bank.getText().toString());
+        bundle.putString("hargaBayar",textView_by_jumlah_kirim.getText().toString());
+
+        bundle.putString("akunTerima", textView_ad_nama_pengirim.getText().toString());
+        bundle.putString("noRekTerima",textView_ad_no_rek_seller.getText().toString());
+        bundle.putString("jumlahTerima", textView_ad_jumlah_kirim.getText().toString());
+        bundle.putString("bankTerima",textView_ad_nama_bank.getText().toString());
+
+
+        bundle.putString("tanggalBarangTiba",textView_tanggal_terima_barang_arr.getText().toString());
+        bundle.putString("namaPenerimaBarang",textView_nama_penerima_barang_arr.getText().toString());
+        bundle.putString("lokasiBarangDiterima",textView_lokasi_terima_barang_arr.getText().toString());
+
+        Intent intent = new Intent(SellerDoneDetailActivity.this, InputPaymentActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

@@ -465,9 +465,9 @@
 
                                 </TextView>
                                 <TextView
-                                    android:id="@+id/tv_add_in_ad_tgal_terima"
+                                    android:id="@+id/tv_add_in_ad_no_rek"
                                     android:padding="5dp"
-                                    android:drawableLeft="@drawable/ic_baseline_date_range_24"
+                                    android:drawableLeft="@drawable/ic_baseline_arrow_forward_ios_24"
                                     android:layout_marginBottom="10dp"
                                     android:textColor="#151414"
                                     android:textSize="12dp"

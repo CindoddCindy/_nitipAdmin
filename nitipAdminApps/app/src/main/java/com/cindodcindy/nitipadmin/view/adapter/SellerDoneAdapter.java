@@ -67,6 +67,18 @@ public class SellerDoneAdapter extends RecyclerView.Adapter<SellerDoneAdapter.Se
                 bundle.putString("jenisBr", content.getJenisBarangKirim());
                 bundle.putString("beratBr",content.getKapasitasBarang());
 
+
+                bundle.putString("akunBayar",content.getAlamatPembeli());
+                bundle.putString("tanggalBayar",content.getAlamatPenerima());
+                bundle.putString("bankBayar",content.getNamaPembeli());
+                bundle.putString("hargaBayar",content.getNamaPenerima());
+
+                bundle.putString("akunTerima", content.getJenisBarangKirim());
+                bundle.putString("noRekTerima",content.getKapasitasBarang());
+                bundle.putString("jumlahTerima", content.getJenisBarangKirim());
+                bundle.putString("bankTerima",content.getKapasitasBarang());
+
+
                 bundle.putString("tanggalBarangTiba",content.getTanggalBarangTiba());
                 bundle.putString("namaPenerimaBarang",content.getDiterimaOleh());
                 bundle.putString("lokasiBarangDiterima",content.getLokasiBarangDiterima());
