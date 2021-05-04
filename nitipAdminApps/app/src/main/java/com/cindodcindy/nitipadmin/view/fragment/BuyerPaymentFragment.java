@@ -12,6 +12,12 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.cindodcindy.nitipadmin.R;
+import com.cindodcindy.nitipadmin.model.pojo_buyer_payment.pojo_get_payment.Content;
+import com.cindodcindy.nitipadmin.model.pojo_buyer_payment.pojo_get_payment.NitipGetPaymentRespon;
+import com.cindodcindy.nitipadmin.retrofit.MethodFactory;
+import com.cindodcindy.nitipadmin.retrofit.RetrofitHandle;
+import com.cindodcindy.nitipadmin.shared_pref.SpHandle;
+import com.cindodcindy.nitipadmin.view.adapter.BuyerPayAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,9 +39,9 @@ public class BuyerPaymentFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     private RecyclerView recyclerView;
-    private DoneAdapter doneAdapter;
-    private List<com.cindodcindy.nitip.pojo.pojo_done.pojo_get_done.Content> contentList = new ArrayList<>();
-    private RetrofitMethodHandle retrofitMethodHandle;
+    private BuyerPayAdapter buyerPayAdapter;
+    private List<Content> contentList = new ArrayList<>();
+    private MethodFactory methodFactory;
     private SpHandle spHandle;
 
 
@@ -80,34 +86,36 @@ public class BuyerPaymentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_buyer_payment, container, false);
+         View view =inflater.inflate(R.layout.fragment_buyer_payment, container, false);
 
         spHandle = new SpHandle(getContext());
 
-        recyclerView = view.findViewById(R.id.rv_done);
-        doneAdapter = new DoneAdapter( contentList, getContext());
-        recyclerView.setAdapter(doneAdapter);
+        recyclerView = view.findViewById(R.id.rv_buyer_payments);
+        buyerPayAdapter = new BuyerPayAdapter( contentList, getContext());
+        recyclerView.setAdapter(buyerPayAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
         sellerGetPayment();
+
+        return view;
     }
 
     public void sellerGetPayment(){
 
         Long id = spHandle.getIdSeller();
 
-        retrofitMethodHandle = RetrofitHandle.getRetrofitLink().create(RetrofitMethodHandle.class);
-        Call<NitipGetDoneRespon> doneResponCall= retrofitMethodHandle.sellerGetDone(id);
-        doneResponCall.enqueue(new Callback<NitipGetDoneRespon>() {
+        methodFactory = RetrofitHandle.getRetrofitLink().create(MethodFactory.class);
+        Call<NitipGetPaymentRespon> nitipGetPaymentResponCall= methodFactory.getPaymentFromBuyer(id);
+        nitipGetPaymentResponCall.enqueue(new Callback<NitipGetPaymentRespon>() {
             @Override
-            public void onResponse(Call<NitipGetDoneRespon> call, Response<NitipGetDoneRespon> response) {
+            public void onResponse(Call<NitipGetPaymentRespon> call, Response<NitipGetPaymentRespon> response) {
 
                 if (response.isSuccessful()) {
                     List<Content> content = response.body().getContent();
-                    doneAdapter = new DoneAdapter(content, getContext());
-                    recyclerView.setAdapter(doneAdapter);
-                    doneAdapter.notifyDataSetChanged();
+                    buyerPayAdapter = new BuyerPayAdapter(content, getContext());
+                    recyclerView.setAdapter(buyerPayAdapter);
+                    buyerPayAdapter.notifyDataSetChanged();
                 }
                 else {
                     // error case
@@ -130,7 +138,7 @@ public class BuyerPaymentFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<NitipGetDoneRespon> call, Throwable t) {
+            public void onFailure(Call<NitipGetPaymentRespon> call, Throwable t) {
                 Toast.makeText(getContext(), "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }

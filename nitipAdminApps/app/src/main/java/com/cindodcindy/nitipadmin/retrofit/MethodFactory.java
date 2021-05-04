@@ -78,6 +78,13 @@ public interface MethodFactory {
     @Headers({
             "Content-Type:application/json"
     })
+    @GET("payment/users/{userId}/payments")
+    Call<NitipGetPaymentRespon> getPaymentFromBuyer(@Path("userId") Long user_id);
+
+
+    @Headers({
+            "Content-Type:application/json"
+    })
     @GET("done/users/{userId}/dones")
     Call<NitipGetDoneRespon> getDoneFromSeller(@Path("userId") Long user_id);
 
