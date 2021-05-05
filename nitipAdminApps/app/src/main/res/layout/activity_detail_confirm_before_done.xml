@@ -313,16 +313,18 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:orientation="horizontal">
+
                                             <LinearLayout
-                                                android:layout_margin="5dp"
+                                                android:padding="5dp"
+                                                android:layout_gravity="center"
+                                                android:gravity="center"
                                                 android:layout_weight="1"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:orientation="vertical"
                                                 >
-
                                                 <TextView
-                                                    android:id="@+id/tv_conf_det_ad_nama_terima"
+                                                    android:id="@+id/tv_det_conf_bf_don_nama_tf"
                                                     android:padding="5dp"
                                                     android:drawableLeft="@drawable/ic_baseline_perm_identity_24"
                                                     android:textColor="#151414"
@@ -337,17 +339,19 @@
                                                     >
 
                                                 </TextView>
+
+
                                                 <TextView
-                                                    android:id="@+id/tv_conf_det_ad_tgal_terima"
+                                                    android:id="@+id/tv_det_conf_bf_don_no_rek_tf"
                                                     android:padding="5dp"
-                                                    android:drawableLeft="@drawable/ic_baseline_date_range_24"
+                                                    android:drawableLeft="@drawable/ic_baseline_arrow_forward_ios_24"
                                                     android:layout_marginBottom="10dp"
                                                     android:textColor="#151414"
                                                     android:textSize="12dp"
                                                     android:textStyle="normal"
                                                     android:gravity="left"
                                                     android:drawablePadding="5dp"
-                                                    android:text="Tanggal Pembayaran"
+                                                    android:text="No Rek"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
                                                     >
@@ -355,56 +359,8 @@
                                                 </TextView>
 
 
-                                                <!--
-
-                                                                <TextView
-                                                                    android:padding="5dp"
-                                                                    android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
-                                                                    android:layout_marginBottom="10dp"
-                                                                    android:textColor="#151414"
-                                                                    android:textSize="12dp"
-                                                                    android:textStyle="normal"
-                                                                    android:gravity="left"
-                                                                    android:drawablePadding="5dp"
-                                                                    android:text="Jumlah Uang"
-                                                                    android:layout_width="match_parent"
-                                                                    android:layout_height="wrap_content"
-                                                                    >
-
-                                                                </TextView>
-                                                                <TextView
-                                                                    android:padding="5dp"
-                                                                    android:drawableLeft="@drawable/ic_baseline_other_houses_24"
-                                                                    android:layout_marginBottom="10dp"
-                                                                    android:textColor="#151414"
-                                                                    android:textSize="12dp"
-                                                                    android:textStyle="normal"
-                                                                    android:gravity="left"
-                                                                    android:drawablePadding="5dp"
-                                                                    android:text="Nama bank"
-                                                                    android:layout_width="match_parent"
-                                                                    android:layout_height="wrap_content"
-                                                                    >
-
-                                                                </TextView>
-
-
-
-                                                -->
-
-                                            </LinearLayout>
-
-                                            <LinearLayout
-                                                android:padding="5dp"
-                                                android:layout_gravity="center"
-                                                android:gravity="center"
-                                                android:layout_weight="1"
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:orientation="vertical"
-                                                >
                                                 <TextView
-                                                    android:id="@+id/tv_conf_det_ad_jumlah_uang_terima"
+                                                    android:id="@+id/tv_det_conf_bf_don_jumlah_uang_tf"
                                                     android:padding="5dp"
                                                     android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
                                                     android:layout_marginBottom="10dp"
@@ -420,7 +376,7 @@
 
                                                 </TextView>
                                                 <TextView
-                                                    android:id="@+id/tv_conf_det_ad_nama_bank_terima"
+                                                    android:id="@+id/tv_det_conf_bf_don_nama_bank_tf"
                                                     android:padding="5dp"
                                                     android:drawableLeft="@drawable/ic_baseline_other_houses_24"
                                                     android:layout_marginBottom="10dp"
@@ -436,6 +392,22 @@
 
                                                 </TextView>
 
+                                                <TextView
+                                                    android:id="@+id/tv_det_conf_bf_don_waktu_bayar_tf"
+                                                    android:padding="5dp"
+                                                    android:drawableLeft="@drawable/ic_baseline_access_time_24"
+                                                    android:layout_marginBottom="10dp"
+                                                    android:textColor="#151414"
+                                                    android:textSize="12dp"
+                                                    android:textStyle="normal"
+                                                    android:gravity="left"
+                                                    android:drawablePadding="5dp"
+                                                    android:text="Waktu Transfer"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    >
+
+                                                </TextView>
 
                                                 <!--
                                                                 <TextView
@@ -481,6 +453,122 @@
                                     </LinearLayout>
 
                                 </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:elevation="2dp"
+                                    app:cardUseCompatPadding="true"
+                                    app:cardMaxElevation="2dp"
+                                    android:layout_margin="2dp">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+                                        <TextView
+                                            android:shadowColor="#F1F5F6"
+                                            android:shadowRadius="2"
+                                            android:shadowDx="1"
+                                            android:shadowDy="1"
+                                            android:padding="3dp"
+                                            android:textColor="#040303"
+                                            android:layout_marginTop="5dp"
+                                            android:textSize="12dp"
+                                            android:textStyle="bold"
+                                            android:gravity="center"
+                                            android:drawablePadding="5dp"
+                                            android:text="Phone Penerima"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            >
+
+                                        </TextView>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <TextView
+                                                android:layout_weight="1"
+                                                android:id="@+id/tv_det_conf_bf_don_phone_penerima_tf"
+                                                android:padding="5dp"
+                                                android:drawableLeft="@drawable/ic_baseline_phone_enabled_24"
+                                                android:textColor="#151414"
+                                                android:layout_marginTop="5dp"
+                                                android:textSize="12dp"
+                                                android:textStyle="normal"
+                                                android:gravity="left"
+                                                android:drawablePadding="5dp"
+                                                android:text="Nomor telepon"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                >
+
+                                            </TextView>
+
+
+
+
+
+                                        </LinearLayout>
+
+                                        <TextView
+                                            android:shadowColor="#F1F5F6"
+                                            android:shadowRadius="2"
+                                            android:shadowDx="1"
+                                            android:shadowDy="1"
+                                            android:padding="3dp"
+                                            android:textColor="#040303"
+                                            android:layout_marginTop="5dp"
+                                            android:textSize="12dp"
+                                            android:textStyle="bold"
+                                            android:gravity="center"
+                                            android:drawablePadding="5dp"
+                                            android:text="Phonoe Pmebeli Jasa"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            >
+
+                                        </TextView>
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+                                            <TextView
+                                                android:layout_weight="1"
+                                                android:id="@+id/tv_det_conf_bf_don_phone_pengirim_tf"
+                                                android:padding="5dp"
+                                                android:drawableLeft="@drawable/ic_baseline_phone_enabled_24"
+                                                android:textColor="#151414"
+                                                android:layout_marginTop="5dp"
+                                                android:textSize="12dp"
+                                                android:textStyle="normal"
+                                                android:gravity="left"
+                                                android:drawablePadding="5dp"
+                                                android:text="Nomor telepon"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                >
+
+                                            </TextView>
+
+
+
+
+                                        </LinearLayout>
+
+
+
+
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+
 
 
 

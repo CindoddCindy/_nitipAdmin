@@ -13,7 +13,10 @@ public class DetailConfirmBeforeDoneActivity extends AppCompatActivity {
     private TextView textView_by_nama_pengirim, textView_by_tgal_kirim, textView_by_jumlah_kirim, textView_by_nama_bank;
 
     //admin get
-    private TextView textView_ad_nama_pengirim, textView_ad_tgal_kirim, textView_ad_jumlah_kirim, textView_ad_nama_bank;
+    private TextView textView_ad_nama_pengirim, textView_ad_no_rek, textView_ad_jumlah_kirim, textView_ad_nama_bank, textView_ad_wktu_tf,
+    textView_phone_pengirim, textView_phone_penerima;
+
+
 
     //data jasa
     private TextView textView_asal, textView_tujuan, textView_date_going, textView_date_arive,
@@ -68,6 +71,55 @@ public class DetailConfirmBeforeDoneActivity extends AppCompatActivity {
         textView_ad_nama_bank=findViewById(R.id.tv_conf_det_by_tf_nama_bank_kirim);
 
         textView_btn_hapus_data=findViewById(R.id.tv_conf_det_btn_hapus_data);
+
+    }
+
+    public void getDataConfBfDone(){
+        if(getIntent().getExtras()!=null) {
+            /**
+             * Jika Bundle ada, ambil data dari Bundle
+             */
+            Bundle bundle = getIntent().getExtras();
+
+            // spHandle.setSpIdConfirmOrderEdit(SpHandle.SP_ID_CONFIRM_ORDER_EDIT, bundle.getLong("id_customer"));
+            //spHandle.setSpIdConfirmOrder(SpHandle.SP_ID_CONFIRM_ORDER,bundle.getLong("id_confirm"));
+            textView_asal.setText(bundle.getString("asal"));
+            textView_tujuan.setText(bundle.getString("tujuan"));
+            textView_date_going.setText(bundle.getString("tglgo"));
+            textView_date_arive.setText(bundle.getString("tglarr"));
+            textView_time_going.setText(bundle.getString("jamgo"));
+            textView_time_arrive.setText(bundle.getString("jamarr"));
+            textView_nama_penjual.setText(bundle.getString("namapenjual"));
+            textView_harga.setText(bundle.getString("harga"));
+            textView_kapasitas.setText(bundle.getString("kapasitas"));
+            textView_jenis_barang.setText(bundle.getString("jenisbarang"));
+
+            textView_by_asal.setText(bundle.getString("asalBr"));
+            textView_by_tujuan.setText(bundle.getString("tujuanBr"));
+            textView_by_pengirim.setText(bundle.getString("pengirim"));
+            textView_by_penerima.setText(bundle.getString("penerima"));
+            textView_by_jenis_barang.setText(bundle.getString("jenisBr"));
+            textView_by_berat_brg.setText(bundle.getString("beratBr"));
+
+            //pengirim
+            textView_by_akun_bank_nama.setText(bundle.getString("namaPengirimUang"));
+            textView_by_tgal_kirim_tf.setText(bundle.getString("TanggalUangDikirim"));
+            textView_by_jumlah_kirim.setText(bundle.getString("JumlahUangDikirim"));
+            textView_by_nama_bank.setText(bundle.getString("BankPengirim"));
+
+            //penerima
+            textView_ad_nama_pengirim.setText(bundle.getString("namaPenerimaUang"));
+            textView_ad_no_rek.setText(bundle.getString("noRekPenerima"));
+            textView_ad_jumlah_kirim.setText(bundle.getString("bankPenerima"));
+            textView_ad_bank_name.setText(bundle.getString("jumlahUang"));
+            textView_ad_wktu_tf.setText(bundle.getString(""));
+
+
+            textView_phone_penerima.setText(bundle.getString("phonePenerima"));
+            textView_phone_pengirim.setText(bundle.getString("phonePengirim"));
+
+
+        }
 
     }
 }
