@@ -92,6 +92,8 @@ public class ConfBfDoneAdapter extends RecyclerView.Adapter<ConfBfDoneAdapter.Bf
                 context.startActivity(intent);
 
             }
+
+
         });
 
 

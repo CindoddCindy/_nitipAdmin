@@ -14,7 +14,7 @@ public class DetailConfirmBeforeDoneActivity extends AppCompatActivity {
 
     //admin get
     private TextView textView_ad_nama_pengirim, textView_ad_no_rek, textView_ad_jumlah_kirim, textView_ad_nama_bank, textView_ad_wktu_tf,
-    textView_phone_pengirim, textView_phone_penerima;
+    textView_phone_ad_pengirim, textView_phone_ad_penerima;
 
 
 
@@ -65,10 +65,14 @@ public class DetailConfirmBeforeDoneActivity extends AppCompatActivity {
         textView_by_nama_bank=findViewById(R.id.tv_conf_det_by_tf_nama_bank_kirim);
 
         //penerima
-        textView_ad_nama_pengirim=findViewById(R.id.tv_conf_det_ad_nama_terima);
-        textView_ad_tgal_kirim=findViewById(R.id.tv_conf_det_ad_tgal_terima);
-        textView_ad_jumlah_kirim=findViewById(R.id.tv_conf_det_ad_jumlah_uang_terima);
-        textView_ad_nama_bank=findViewById(R.id.tv_conf_det_by_tf_nama_bank_kirim);
+        textView_ad_nama_pengirim=findViewById(R.id.tv_det_conf_bf_don_nama_tf);
+        textView_ad_no_rek=findViewById(R.id.tv_det_conf_bf_don_no_rek_tf);
+        textView_ad_jumlah_kirim=findViewById(R.id.tv_det_conf_bf_don_jumlah_uang_tf);
+        textView_ad_nama_bank=findViewById(R.id.tv_det_conf_bf_don_nama_bank_tf);
+        textView_ad_wktu_tf=findViewById(R.id.tv_det_conf_bf_don_waktu_bayar_tf);
+
+        textView_phone_ad_pengirim=findViewById(R.id.tv_det_conf_bf_don_phone_pengirim_tf);
+        textView_phone_ad_penerima=findViewById(R.id.tv_det_conf_bf_don_phone_penerima_tf);
 
         textView_btn_hapus_data=findViewById(R.id.tv_conf_det_btn_hapus_data);
 
@@ -102,8 +106,8 @@ public class DetailConfirmBeforeDoneActivity extends AppCompatActivity {
             textView_by_berat_brg.setText(bundle.getString("beratBr"));
 
             //pengirim
-            textView_by_akun_bank_nama.setText(bundle.getString("namaPengirimUang"));
-            textView_by_tgal_kirim_tf.setText(bundle.getString("TanggalUangDikirim"));
+            textView_by_nama_pengirim.setText(bundle.getString("namaPengirimUang"));
+            textView_by_tgal_kirim.setText(bundle.getString("TanggalUangDikirim"));
             textView_by_jumlah_kirim.setText(bundle.getString("JumlahUangDikirim"));
             textView_by_nama_bank.setText(bundle.getString("BankPengirim"));
 
@@ -111,12 +115,13 @@ public class DetailConfirmBeforeDoneActivity extends AppCompatActivity {
             textView_ad_nama_pengirim.setText(bundle.getString("namaPenerimaUang"));
             textView_ad_no_rek.setText(bundle.getString("noRekPenerima"));
             textView_ad_jumlah_kirim.setText(bundle.getString("bankPenerima"));
-            textView_ad_bank_name.setText(bundle.getString("jumlahUang"));
-            textView_ad_wktu_tf.setText(bundle.getString(""));
+            textView_ad_nama_bank.setText(bundle.getString("jumlahUang"));
+            textView_ad_wktu_tf.setText(bundle.getString("waktuBayar"));
 
 
-            textView_phone_penerima.setText(bundle.getString("phonePenerima"));
-            textView_phone_pengirim.setText(bundle.getString("phonePengirim"));
+            textView_phone_ad_penerima.setText(bundle.getString("phonePenerima"));
+            textView_by_pengirim.setText(bundle.getString("phonePengirim"));
+
 
 
         }
