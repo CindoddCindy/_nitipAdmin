@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/buyer_payment"
+        android:icon="@drawable/ic_baseline_attach_money_24"
+        android:title="Home" />
+
+    <item android:id="@+id/confirm_to_seller"
+        android:icon="@drawable/ic_baseline_arrow_circle_up_24"
+        android:title="Confirm To Seller" />
+
+    <item android:id="@+id/seller_done"
+        android:icon="@drawable/ic_baseline_arrow_circle_down_24"
+        android:title="Seller Done" />
+
+    <item android:id="@+id/admin_payment"
+        android:icon="@drawable/ic_baseline_check_circle_outline_24"
+        android:title="Admin Done " />
+</menu>
